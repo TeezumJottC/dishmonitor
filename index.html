@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dish Monitor for Starlink – Sundkey</title>
+  <meta name="description" content="Live download, upload and ping from your Starlink dish on three Stream Deck keys. A Sundkey plugin. Unofficial, not affiliated with SpaceX or Starlink.">
+  <link rel="canonical" href="https://teezumjottc.github.io/dishmonitor/">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="images/favicon-64.png">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <meta property="og:title" content="Dish Monitor for Starlink – Sundkey">
+  <meta property="og:description" content="Your Starlink dish, live on three Stream Deck keys. Unofficial, not affiliated with SpaceX or Starlink.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://teezumjottc.github.io/dishmonitor/">
+  <meta property="og:image" content="https://teezumjottc.github.io/dishmonitor/images/gallery-overview.png">
+  <meta name="theme-color" content="#0b141c">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="https://teezumjottc.github.io/dishmonitor/">
+        <img src="images/logo-256.png" width="40" height="40" alt="">
+        <span><strong>Dish Monitor for Starlink</strong><span>A Sundkey plugin</span></span>
+      </a>
+      <nav class="nav-links" aria-label="Page">
+        <a href="#keys">Keys</a>
+        <a href="#requirements">Requirements</a>
+        <a href="#faq">FAQ</a>
+        <a href="#de" lang="de">Deutsch</a>
+        <a href="#support">Support</a>
+        <a class="btn" href="#marketplace">Elgato Marketplace</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap hero">
+      <div class="hero-grid">
+        <div>
+          <p class="kicker">Stream Deck plugin</p>
+          <h1>Your dish, live on three keys</h1>
+          <p class="lede">See download, upload and ping straight from your Starlink dish — animated and colour-coded, with no extra app and no login.</p>
+          <a class="btn btn-lg" href="#marketplace" id="marketplace">Available on the Elgato Marketplace</a>
+        </div>
+        <figure class="hero-shot">
+          <img src="images/gallery-overview.png" width="1920" height="960" alt="Three Stream Deck keys showing live download, upload and ping from a Starlink dish.">
+        </figure>
+      </div>
+    </div>
+
+    <section id="keys">
+      <div class="wrap">
+        <h2>The three keys</h2>
+        <p class="intro">Place all three next to each other. They share one live view of the dish.</p>
+        <div class="cards">
+          <article class="card">
+            <span class="num">1</span>
+            <h3>Download + dish status</h3>
+            <p>Live download rate, with an animated logo. A coloured dot on the logo shows dish health. Press to step through status pages — for example “Dish OK”, any active alerts, then firmware and uptime. The key returns to the live view after six seconds.</p>
+          </article>
+          <article class="card">
+            <span class="num">2</span>
+            <h3>Upload + speed test</h3>
+            <p>Live upload rate, plus a small network-status dot from Starlink’s public status page (display only). Press to run a 10-second speed test via Cloudflare. Progress appears across the three keys; the result stays for five seconds.</p>
+          </article>
+          <article class="card">
+            <span class="num">3</span>
+            <h3>Ping + protected restart</h3>
+            <p>Latency and link quality. To restart the dish, hold the key for two seconds, then press again to confirm. You can turn the restart action off in the plugin settings.</p>
+          </article>
+        </div>
+        <p class="legend">
+          <span><i class="dot" style="--c:#3BA55D"></i>Green — dish OK</span>
+          <span><i class="dot" style="--c:#F5C542"></i>Yellow — update ready, or heater on</span>
+          <span><i class="dot" style="--c:#E5484D"></i>Red — a problem the dish is reporting</span>
+        </p>
+      </div>
+    </section>
+
+    <section id="screenshots">
+      <div class="wrap">
+        <h2>In action</h2>
+        <p class="intro">A one-press speed test, a protected restart, and a clear view of every state.</p>
+        <div class="shots">
+          <figure class="shot">
+            <img src="images/gallery-speedtest.png" width="1920" height="960" alt="Speed test in progress and the result on the three keys.">
+          </figure>
+          <figure class="shot">
+            <img src="images/gallery-restart.png" width="1920" height="960" alt="Network status dot and the hold, confirm, restarting and back-online states on the ping key.">
+          </figure>
+          <figure class="shot">
+            <img src="images/gallery-states.png" width="1920" height="960" alt="Four rows of keys showing good, fair, packet-loss and offline states.">
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="requirements">
+      <div class="wrap">
+        <h2>Requirements</h2>
+        <div class="req">
+          <div class="item">
+            <strong>Stream Deck 7.1 or newer</strong>
+            <p>Works on the official Elgato Stream Deck software, version 7.1 or later.</p>
+          </div>
+          <div class="item">
+            <strong>Windows 10+ or macOS 12+</strong>
+            <p>The plugin runs on both platforms.</p>
+          </div>
+          <div class="item">
+            <strong>A Starlink dish on your local network</strong>
+            <p>The plugin talks to the dish at 192.168.100.1, port 9201. No Starlink login is required.</p>
+          </div>
+        </div>
+        <p class="note"><strong style="color:#fff">Own router (bypass mode).</strong> If the dish is in bypass mode behind a third-party router, you may need to add a static route to <code>192.168.100.0/24</code> so your computer can still reach the dish. This applies to the live values as well as the speed test trigger and status pages.</p>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="wrap">
+        <h2>FAQ and troubleshooting</h2>
+        <div class="faq">
+          <div class="item">
+            <h3>The keys say offline, or stay on dashes</h3>
+            <p>Check that the dish is powered and that you can reach 192.168.100.1 from the computer running Stream Deck. In bypass mode, add the static route above. You can also set the dish address in the plugin settings.</p>
+          </div>
+          <div class="item">
+            <h3>Do I need a Starlink account or app?</h3>
+            <p>No. The plugin reads the dish locally. It does not log in to Starlink.</p>
+          </div>
+          <div class="item">
+            <h3>How much data does the speed test use?</h3>
+            <p>A full 10-second test uses about 110 MB down and 15 MB up, via Cloudflare. It runs only when you press key 2.</p>
+          </div>
+          <div class="item">
+            <h3>I don’t want the restart action</h3>
+            <p>Open the plugin settings and turn the restart key off. The ping display stays; hold-to-restart is disabled.</p>
+          </div>
+          <div class="item">
+            <h3>The dish-status dot is yellow or red</h3>
+            <p>Press key 1 to step through the messages (for example an update waiting for a night-time reboot, the heater running, or a reported fault). After six seconds the key returns to the live download view.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="privacy">
+      <div class="wrap">
+        <h2>Privacy</h2>
+        <p class="intro">No dish data is sent to Sundkey. Almost everything stays on your computer. The only outbound requests are a speed test to Cloudflare (<code>speed.cloudflare.com</code>) when you start one, and an occasional check of Starlink’s public status page (<code>starlink.statuspage.io</code>).</p>
+      </div>
+    </section>
+
+    <section id="support">
+      <div class="wrap">
+        <h2>Support</h2>
+        <p class="intro">Questions or problems: write to <a href="mailto:sundkey@mailbox.org">sundkey@mailbox.org</a>. This is an unofficial plugin from Sundkey, not affiliated with, endorsed or sponsored by SpaceX or Starlink.</p>
+        <a class="btn" href="#marketplace">Available on the Elgato Marketplace</a>
+      </div>
+    </section>
+
+    <section id="de" class="lang-de" lang="de">
+      <div class="wrap">
+        <h2>Auf Deutsch</h2>
+        <p class="intro">Dish Monitor for Starlink zeigt Download, Upload und Ping deiner Schüssel live auf drei Stream-Deck-Tasten. Ein Plugin von Sundkey. Kein Login, keine extra App.</p>
+        <div class="cards">
+          <article class="card">
+            <span class="num">1</span>
+            <h3>Download + Dish-Status</h3>
+            <p>Live-Download und ein Farbpunkt am Logo für den Zustand der Schüssel. Ein Druck blättert durch Status-Seiten (zum Beispiel „Dish OK“, aktive Meldungen, Firmware und Laufzeit). Nach sechs Sekunden geht es zurück zur Live-Anzeige.</p>
+          </article>
+          <article class="card">
+            <span class="num">2</span>
+            <h3>Upload + Speedtest</h3>
+            <p>Live-Upload und ein kleiner Netz-Punkt von der öffentlichen Starlink-Statusseite (nur Anzeige). Ein Druck startet einen 10-Sekunden-Speedtest über Cloudflare. Das Ergebnis bleibt fünf Sekunden stehen.</p>
+          </article>
+          <article class="card">
+            <span class="num">3</span>
+            <h3>Ping + geschützter Neustart</h3>
+            <p>Latenz und Leitungsqualität. Für einen Neustart der Schüssel: zwei Sekunden halten, dann nochmal drücken zum Bestätigen. In den Einstellungen lässt sich der Neustart abschalten.</p>
+          </article>
+        </div>
+        <p class="legend">
+          <span><i class="dot" style="--c:#3BA55D"></i>Grün — Dish OK</span>
+          <span><i class="dot" style="--c:#F5C542"></i>Gelb — Update bereit oder Heizung läuft</span>
+          <span><i class="dot" style="--c:#E5484D"></i>Rot — die Schüssel meldet ein Problem</span>
+        </p>
+
+        <h2 style="margin-top:40px">Voraussetzungen</h2>
+        <div class="req">
+          <div class="item"><strong>Stream Deck 7.1 oder neuer</strong><p>Offizielle Elgato-Software, Version 7.1 oder höher.</p></div>
+          <div class="item"><strong>Windows 10+ oder macOS 12+</strong><p>Das Plugin läuft auf beiden Systemen.</p></div>
+          <div class="item"><strong>Starlink-Schüssel im lokalen Netz</strong><p>Standardadresse 192.168.100.1, Port 9201. Es ist kein Starlink-Login nötig.</p></div>
+        </div>
+        <p class="note"><strong style="color:#fff">Eigener Router (Bypass-Modus).</strong> Wenn die Schüssel hinter einem dritten Router im Bypass-Modus hängt, musst du dort eventuell eine statische Route zu <code>192.168.100.0/24</code> eintragen, damit der Rechner die Schüssel erreicht. Das gilt für die Live-Werte, den Speedtest und die Status-Seiten.</p>
+
+        <h2 style="margin-top:40px">Kurz-FAQ</h2>
+        <div class="faq">
+          <div class="item">
+            <h3>Die Tasten bleiben offline oder zeigen Striche</h3>
+            <p>Prüfe, ob die Schüssel läuft und 192.168.100.1 vom Rechner mit Stream Deck erreichbar ist. Im Bypass-Modus die Route oben eintragen. Die Adresse kannst du auch in den Plugin-Einstellungen setzen.</p>
+          </div>
+          <div class="item">
+            <h3>Brauche ich ein Starlink-Konto?</h3>
+            <p>Nein. Das Plugin liest die Schüssel nur im lokalen Netz.</p>
+          </div>
+          <div class="item">
+            <h3>Wie viel Volumen braucht der Speedtest?</h3>
+            <p>Ein voller 10-Sekunden-Test etwa 110 MB Download und 15 MB Upload, über Cloudflare, und nur wenn du Taste 2 drückst.</p>
+          </div>
+        </div>
+
+        <h2 style="margin-top:40px">Datenschutz und Support</h2>
+        <p class="intro">Es werden keine Daten der Schüssel an Sundkey geschickt. Fast alles bleibt auf deinem Rechner. Nach außen gehen nur der Speedtest zu Cloudflare (<code>speed.cloudflare.com</code>), wenn du ihn startest, und gelegentlich eine Abfrage der öffentlichen Statusseite (<code>starlink.statuspage.io</code>). Support: <a href="mailto:sundkey@mailbox.org">sundkey@mailbox.org</a>. Inoffiziell: nicht mit SpaceX oder Starlink verbunden, nicht von ihnen unterstützt oder gesponsert.</p>
+        <a class="btn" href="#marketplace">Im Elgato Marketplace erhältlich</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>Unofficial. Not affiliated with, endorsed or sponsored by SpaceX or Starlink. Starlink is a trademark of SpaceX. Dish Monitor for Starlink is a Sundkey plugin.</p>
+      <p>Support: <a href="mailto:sundkey@mailbox.org">sundkey@mailbox.org</a>. Website: <a href="https://teezumjottc.github.io/dishmonitor/">teezumjottc.github.io/dishmonitor</a>.</p>
+      <div class="meta">
+        <span>© Sundkey</span>
+        <a href="#marketplace">Elgato Marketplace</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
