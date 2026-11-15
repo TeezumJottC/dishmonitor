@@ -180,3 +180,10 @@ footer .meta { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 16px; 
   .hero { padding-top: 36px; }
   section { padding: 40px 0; }
 }
+
+.btn-soon {
+  background: #15222c;
+  color: var(--cyan);
+  box-shadow: inset 0 0 0 1px #2a3c48;
+}
+.btn-soon:hover { filter: brightness(1.08); color: #fff; }

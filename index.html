@@ -13,7 +13,7 @@
   <meta property="og:description" content="Your Starlink dish, live on three Stream Deck keys. Unofficial, not affiliated with SpaceX or Starlink.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://teezumjottc.github.io/dishmonitor/">
-  <meta property="og:image" content="https://teezumjottc.github.io/dishmonitor/images/gallery-overview.png">
+  <meta property="og:image" content="https://teezumjottc.github.io/dishmonitor/images/thumbnail.png">
   <meta name="theme-color" content="#0b141c">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -30,7 +30,7 @@
         <a href="#faq">FAQ</a>
         <a href="#de" lang="de">Deutsch</a>
         <a href="#support">Support</a>
-        <a class="btn" href="#marketplace">Elgato Marketplace</a>
+        <a class="btn btn-soon" href="#marketplace">Coming soon</a>
       </nav>
     </div>
   </header>
@@ -42,10 +42,10 @@
           <p class="kicker">Stream Deck plugin</p>
           <h1>Your dish, live on three keys</h1>
           <p class="lede">See download, upload and ping straight from your Starlink dish — animated and colour-coded, with no extra app and no login.</p>
-          <a class="btn btn-lg" href="#marketplace" id="marketplace">Available on the Elgato Marketplace</a>
+          <a class="btn btn-lg btn-soon" href="#marketplace" id="marketplace">Coming soon to the Elgato Marketplace</a>
         </div>
         <figure class="hero-shot">
-          <img src="images/gallery-overview.png" width="1920" height="960" alt="Three Stream Deck keys showing live download, upload and ping from a Starlink dish.">
+          <img src="images/thumbnail.png" width="1920" height="960" alt="Dish Monitor for Starlink on three Stream Deck keys, showing live download, upload and ping.">
         </figure>
       </div>
     </div>
@@ -58,22 +58,22 @@
           <article class="card">
             <span class="num">1</span>
             <h3>Download + dish status</h3>
-            <p>Live download rate, with an animated logo. A coloured dot on the logo shows dish health. Press to step through status pages — for example “Dish OK”, any active alerts, then firmware and uptime. The key returns to the live view after six seconds.</p>
+            <p>Live download rate, with an animated logo. The colour in the centre of the logo shows dish health. Press to step through status pages — for example “Dish OK”, any active alerts, then firmware and uptime. The key returns to the live view after six seconds.</p>
           </article>
           <article class="card">
             <span class="num">2</span>
             <h3>Upload + speed test</h3>
-            <p>Live upload rate, plus a small network-status dot from Starlink’s public status page (display only). Press to run a 10-second speed test via Cloudflare. Progress appears across the three keys; the result stays for five seconds.</p>
+            <p>Live upload rate, with the official network-status dot to the left of “Upload” (display only). Hold for two seconds to run a 10-second speed test via Cloudflare. A short press shows a hint. Progress appears across the three keys; the result stays for five seconds.</p>
           </article>
           <article class="card">
             <span class="num">3</span>
             <h3>Ping + protected restart</h3>
-            <p>Latency and link quality. To restart the dish, hold the key for two seconds, then press again to confirm. You can turn the restart action off in the plugin settings.</p>
+            <p>Latency, link quality and an online-status dot. To restart the dish, hold the key for two seconds until it shows “Sure?”, then press again to confirm. You can turn the restart action off in the plugin settings.</p>
           </article>
         </div>
         <p class="legend">
           <span><i class="dot" style="--c:#3BA55D"></i>Green — dish OK</span>
-          <span><i class="dot" style="--c:#F5C542"></i>Yellow — update ready, or heater on</span>
+          <span><i class="dot" style="--c:#F5C542"></i>Yellow — update ready, heater on, or weaker signal than expected</span>
           <span><i class="dot" style="--c:#E5484D"></i>Red — a problem the dish is reporting</span>
         </p>
       </div>
@@ -82,16 +82,19 @@
     <section id="screenshots">
       <div class="wrap">
         <h2>In action</h2>
-        <p class="intro">A one-press speed test, a protected restart, and a clear view of every state.</p>
+        <p class="intro">The three keys at a glance, dish-status colours, a two-second-hold speed test, and a protected restart.</p>
         <div class="shots">
           <figure class="shot">
-            <img src="images/gallery-speedtest.png" width="1920" height="960" alt="Speed test in progress and the result on the three keys.">
+            <img src="images/gallery-overview.png" width="1920" height="960" alt="Overview of the three keys: download with status colour in the logo, upload with the network-status dot, and ping with a protected restart.">
           </figure>
           <figure class="shot">
-            <img src="images/gallery-restart.png" width="1920" height="960" alt="Network status dot and the hold, confirm, restarting and back-online states on the ping key.">
+            <img src="images/gallery-status.png" width="1920" height="960" alt="Green, yellow and red dish-status colours in the logo, with example status pages for updates, heating, signal, overheating, motors, location, cable and water.">
           </figure>
           <figure class="shot">
-            <img src="images/gallery-states.png" width="1920" height="960" alt="Four rows of keys showing good, fair, packet-loss and offline states.">
+            <img src="images/gallery-speedtest.png" width="1920" height="960" alt="Speed test started by holding key 2 for two seconds, then progress and the result on the three keys.">
+          </figure>
+          <figure class="shot">
+            <img src="images/gallery-restart.png" width="1920" height="960" alt="Protected dish restart: hold for two seconds, confirm with Sure?, restarting, then back online.">
           </figure>
         </div>
       </div>
@@ -132,15 +135,15 @@
           </div>
           <div class="item">
             <h3>How much data does the speed test use?</h3>
-            <p>A full 10-second test uses about 110 MB down and 15 MB up, via Cloudflare. It runs only when you press key 2.</p>
+            <p>A full 10-second test uses about 110 MB down and 15 MB up, via Cloudflare. It runs only when you hold key 2 for two seconds.</p>
           </div>
           <div class="item">
             <h3>I don’t want the restart action</h3>
             <p>Open the plugin settings and turn the restart key off. The ping display stays; hold-to-restart is disabled.</p>
           </div>
           <div class="item">
-            <h3>The dish-status dot is yellow or red</h3>
-            <p>Press key 1 to step through the messages (for example an update waiting for a night-time reboot, the heater running, or a reported fault). After six seconds the key returns to the live download view.</p>
+            <h3>The dish-status colour is yellow or red</h3>
+            <p>Press key 1 to step through the messages (for example an update waiting for a night-time reboot, the heater running, a weaker signal than expected, or a reported fault). After six seconds the key returns to the live download view.</p>
           </div>
         </div>
       </div>
@@ -157,7 +160,7 @@
       <div class="wrap">
         <h2>Support</h2>
         <p class="intro">Questions or problems: write to <a href="mailto:sundkey@mailbox.org">sundkey@mailbox.org</a>. This is an unofficial plugin from Sundkey, not affiliated with, endorsed or sponsored by SpaceX or Starlink.</p>
-        <a class="btn" href="#marketplace">Available on the Elgato Marketplace</a>
+        <a class="btn btn-soon" href="#marketplace">Coming soon to the Elgato Marketplace</a>
       </div>
     </section>
 
@@ -169,22 +172,22 @@
           <article class="card">
             <span class="num">1</span>
             <h3>Download + Dish-Status</h3>
-            <p>Live-Download und ein Farbpunkt am Logo für den Zustand der Schüssel. Ein Druck blättert durch Status-Seiten (zum Beispiel „Dish OK“, aktive Meldungen, Firmware und Laufzeit). Nach sechs Sekunden geht es zurück zur Live-Anzeige.</p>
+            <p>Live-Download und der Dish-Status als Farbe in der Mitte des Logos. Ein Druck blättert durch Status-Seiten (zum Beispiel „Dish OK“, aktive Meldungen, Firmware und Laufzeit). Nach sechs Sekunden geht es zurück zur Live-Anzeige.</p>
           </article>
           <article class="card">
             <span class="num">2</span>
             <h3>Upload + Speedtest</h3>
-            <p>Live-Upload und ein kleiner Netz-Punkt von der öffentlichen Starlink-Statusseite (nur Anzeige). Ein Druck startet einen 10-Sekunden-Speedtest über Cloudflare. Das Ergebnis bleibt fünf Sekunden stehen.</p>
+            <p>Live-Upload und der Netz-Punkt links neben „Upload“, von der öffentlichen Starlink-Statusseite (nur Anzeige). Zwei Sekunden halten startet einen 10-Sekunden-Speedtest über Cloudflare. Ein kurzer Druck zeigt einen Hinweis. Das Ergebnis bleibt fünf Sekunden stehen.</p>
           </article>
           <article class="card">
             <span class="num">3</span>
             <h3>Ping + geschützter Neustart</h3>
-            <p>Latenz und Leitungsqualität. Für einen Neustart der Schüssel: zwei Sekunden halten, dann nochmal drücken zum Bestätigen. In den Einstellungen lässt sich der Neustart abschalten.</p>
+            <p>Latenz, Leitungsqualität und ein Online-Punkt. Für einen Neustart der Schüssel: zwei Sekunden halten, bis „Sure?“ erscheint, dann nochmal drücken zum Bestätigen. In den Einstellungen lässt sich der Neustart abschalten.</p>
           </article>
         </div>
         <p class="legend">
           <span><i class="dot" style="--c:#3BA55D"></i>Grün — Dish OK</span>
-          <span><i class="dot" style="--c:#F5C542"></i>Gelb — Update bereit oder Heizung läuft</span>
+          <span><i class="dot" style="--c:#F5C542"></i>Gelb — Update bereit, Heizung läuft oder Signal schwächer als erwartet</span>
           <span><i class="dot" style="--c:#E5484D"></i>Rot — die Schüssel meldet ein Problem</span>
         </p>
 
@@ -208,13 +211,13 @@
           </div>
           <div class="item">
             <h3>Wie viel Volumen braucht der Speedtest?</h3>
-            <p>Ein voller 10-Sekunden-Test etwa 110 MB Download und 15 MB Upload, über Cloudflare, und nur wenn du Taste 2 drückst.</p>
+            <p>Ein voller 10-Sekunden-Test etwa 110 MB Download und 15 MB Upload, über Cloudflare, und nur wenn du Taste 2 zwei Sekunden hältst.</p>
           </div>
         </div>
 
         <h2 style="margin-top:40px">Datenschutz und Support</h2>
         <p class="intro">Es werden keine Daten der Schüssel an Sundkey geschickt. Fast alles bleibt auf deinem Rechner. Nach außen gehen nur der Speedtest zu Cloudflare (<code>speed.cloudflare.com</code>), wenn du ihn startest, und gelegentlich eine Abfrage der öffentlichen Statusseite (<code>starlink.statuspage.io</code>). Support: <a href="mailto:sundkey@mailbox.org">sundkey@mailbox.org</a>. Inoffiziell: nicht mit SpaceX oder Starlink verbunden, nicht von ihnen unterstützt oder gesponsert.</p>
-        <a class="btn" href="#marketplace">Im Elgato Marketplace erhältlich</a>
+        <a class="btn btn-soon" href="#marketplace">Demnächst im Elgato Marketplace</a>
       </div>
     </section>
   </main>
@@ -225,7 +228,7 @@
       <p>Support: <a href="mailto:sundkey@mailbox.org">sundkey@mailbox.org</a>. Website: <a href="https://teezumjottc.github.io/dishmonitor/">teezumjottc.github.io/dishmonitor</a>.</p>
       <div class="meta">
         <span>© Sundkey</span>
-        <a href="#marketplace">Elgato Marketplace</a>
+        <a href="#marketplace">Coming soon to the Elgato Marketplace</a>
         <a href="impressum.html">Impressum / Legal notice</a>
       </div>
     </div>
